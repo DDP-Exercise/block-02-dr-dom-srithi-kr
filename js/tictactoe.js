@@ -14,7 +14,7 @@
  *     For that reason, your little program should be written in a way, that it can
  *     scale with the size of the battlefield (3x3, 4x4, ..., nxn).
  *
- *     Bratlsoft - 2026-03-15
+ *     Srithi - 2026-03-31
  *******************************************************/
 
 const X = "Savior (X)";
@@ -68,3 +68,39 @@ const BATTLEFIELD =
 // Check Vertical
 // Check Main Diagonal
 // Check Anti Diagonal
+
+function checkWinner(battlefield) {
+    const size = battlefield.length;
+
+    function isWinningLine(line, player) {
+        return line.length === size && line.every(cell => cell === player);
+    }
+
+// check if a row/colum has won
+
+    for (let row = 0; row < size; row++) {
+        if (isWinningLine(battlefield[row], X)) {
+            return {winner: X, type: "horizontal", index: row};
+        }
+        if (isWinningLine(battlefield[row], O)) {
+            return {winner: O, type: "horizontal", index: row};
+        }
+    }
+
+    for (let col = 0; col < size; col++) {
+        const verticalLine = [];
+        for (let row = 0; row < size; row++) {
+            verticalLine.push(board[row][col]);
+        }
+        if (isWinningLine(verticalLine, X)) {
+            return {winner: X, type: "vertical", index: col};
+        }
+        if (isWinningLine(verticalLine, O)) {
+            return {winner: O, type: "vertical", index: col};
+        }
+        
+        return null;
+    }
+
+    //...
+}
