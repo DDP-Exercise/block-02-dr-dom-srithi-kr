@@ -27,8 +27,11 @@
  * without the risk of catching an eye infection!
  */
 
-
-
+const paragraph = document.getElementsByTagName("p");
+for (let p of paragraph) {
+    p.style.display = "none";
+    p.style.backgroundColor = "white";
+}
 
 /**
  * TODO 2:
@@ -36,7 +39,10 @@
  * Can't we just remove them all together?
  */
 
-
+const minions = document.querySelector('ul:not(#heroes_of_the_web)');
+if (minions) {
+    minions.remove();
+}
 
 
 /**
@@ -45,7 +51,15 @@
  * And while at it, let the world know again, that they are back in town!
  */
 
+const heros = document.getElementById("heroes_of_the_web");
+if (heros) {
+    heros.style.visibility = "visible";
+}
 
+//const messageParagraph = document.getElementById('message');
+//if (messageParagraph) {
+//    messageParagraph.nextElementSibling.textContent = 'Let us introduce to you our list of Web-Heroes:';
+//}
 
 /**
  * TODO 4:
@@ -53,8 +67,10 @@
  * Do your thing, savior!
  */
 
-
-
+const title = document.getElementById("title");
+if (title) {
+    title.textContent = "The Heros have returned!";
+}
 /**
  * TODO 5:
  * You saved the day, again! I knew I could count on you. Our Website is restored,
@@ -63,3 +79,8 @@
  * It might sound paranoid. But I can't get rid of the feeling, that he is still here,
  * somewhere in the DOM. I can still feel his Code. Can you identify the source and remove it?
  */
+
+const evilScript = document.querySelector('script[src="js/dr.dom.js"]');
+if (evilScript) {
+    evilScript.remove();
+}

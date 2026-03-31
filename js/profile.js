@@ -15,6 +15,21 @@
  *******************************************************/
 
 //TODO: Place one object here.
+const SAVIOR = {
+    name: "Someone of Great Power",
+    power: "Super Intelligence",
+    age: 15,
+    location: "Nebula 12",
+    hobbies : ["Flying", "Gym", "Cooking"],
+    type_of_companion: "Dragon",
+    companion: {
+        name: "Cheddar",
+        color: "Yellow",
+        material: "Scales",
+        special_power: "Cheese Breath",
+        years_of_service: 1
+    }
+};
 
 /*******************************************************
  *   DO NOT CHANGE THE CODE BELOW!
